@@ -1,0 +1,49 @@
+﻿@page
+<div class="container">
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-2">User</div>
+        <div class="col-4"><input type="text" id="userInput" /></div>
+    </div>
+    <div class="row">
+        <div class="col-2">Password</div>
+        <div class="col-4"><input type="password" id="messageInput" /></div>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-6">
+            <input type="button" id="sendButton" value="Send Message" />
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <hr />
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <form name="search">
+            <input type="text" name="key" placeholder="Логин" id="log">
+            <input type="password" name="password" placeholder="Пароль" id="pass">
+            <input type="submit" name="send" value="Отправить" />
+        </form>
+        <div id="printBlock"></div>
+        <script>
+            function sendForm(e) {
+
+                // получаем значение поля key
+                var keyBox = document.search.key;
+                var val = document.getElementById("log").value + document.getElementById("pass").value;
+                alert(val);
+                window.open('Privacy');
+            }
+
+            var sendButton = document.search.send;
+            sendButton.addEventListener("click", sendForm);
+        </script>
+            <ul id="messagesList"></ul>
+            </div >
+</div >
+                <script src="~/js/signalr/dist/browser/signalr.js"></script>
+        <script src="~/js/chat.js"></script>
