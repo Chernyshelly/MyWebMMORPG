@@ -10,7 +10,7 @@ connection.on("ReceiveMessage", function (user, message) {
     var encodedMsg = user + " says " + msg;
     switch (msg) {
         case "successReg": alert("Registered new user"); break;
-        case "failreg": alert("Please, try to use other username"); break;
+        case "failReg": alert("Please, try to use other username"); break;
         case "successLog": alert("Login success"); break;
         case "failLog": alert("Login failed"); break;
     }
@@ -28,7 +28,7 @@ connection.start().then(function () {
 document.getElementById("sendButton").addEventListener("click", function (event) {
     var user = document.getElementById("userInput").value;
     var message = document.getElementById("messageInput").value;
-    connection.invoke("Login", user, message).catch(function (err) {
+    connection.invoke("Register", user, message).catch(function (err) {
         return console.error(err.toString());
     });
     event.preventDefault();
