@@ -25,7 +25,7 @@ namespace WebMMO.Hubs
                 }
                 if (canRegister)
                 {
-                    User newUser = new User { Name = user, Age = 33 };
+                    User newUser = new User { Name = user, Password = message };
                     db.Users.Add(newUser);
                     db.SaveChanges();
                     reply = "successReg";
@@ -39,7 +39,18 @@ namespace WebMMO.Hubs
         }
         public async Task Login(string user, string message)
         {
-            string reply = $"{user} is trying to login with password: {message}";
+            string reply = "failLog";
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                var users = db.Users.ToList();
+                foreach(User u in users)
+                {
+                    if (u.Name == user && u.Password == message)
+                    {
+                        reply = "successLog";
+                    }
+                }
+            }
             await Clients.Caller.SendAsync("ReceiveMessage", user, reply);
         }
     }
