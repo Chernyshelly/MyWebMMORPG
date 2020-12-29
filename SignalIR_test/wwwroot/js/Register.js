@@ -9,7 +9,7 @@ connection.on("ReceiveMessage", function (user, message) {
     var msg = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
     var encodedMsg = user + " says " + msg;
     switch (msg) {
-        case "successReg": alert("Registered new user"); window.location.href = "Privacy/"; break;
+        case "successReg": alert("Registered new user"); localStorage.setItem('mywebmmocur', user); window.location.href = "../MainPage/"; break;
         case "failReg": alert("Please, try to use other username"); break;
     }
     var li = document.createElement("li");

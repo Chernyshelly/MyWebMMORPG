@@ -9,7 +9,7 @@ connection.on("ReceiveMessage", function (user, message) {
     var msg = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
     var encodedMsg = user + " says " + msg;
     switch (msg) {
-        case "successLog": alert("Login success"); window.location.href = "Privacy/"; break;
+        case "successLog": alert("Login success"); localStorage.setItem('mywebmmocur', user); window.location.href = "../MainPage/"; break;
         case "failLog": alert("Login failed"); break;
     }
     var li = document.createElement("li");
