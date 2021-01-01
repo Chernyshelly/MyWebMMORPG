@@ -5,11 +5,11 @@
     alert(localStorage.getItem('mywebmmocur'));
     if (localStorage.getItem('mywebmmocur') == null) {
         alert('You should be logged in to access this page');
-        window.location.href = "../Index/";
+        window.location.href = "../";
     }
     function onQuitBtn(e) {
         delete localStorage.mywebmmocur;
-        window.location.href = "../Index/";
+        window.location.href = "../";
     }
     var quitBtn = document.getElementById('quitBttn');
     quitBtn.addEventListener("click", onQuitBtn);
