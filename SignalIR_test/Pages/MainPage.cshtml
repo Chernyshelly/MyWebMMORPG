@@ -1,3 +1,16 @@
 ﻿@page
 <p> CoolStoryBob</p>
-<script> alert(localStorage.getItem('mywebmmocur'));</script>
+<button name="quit" id="quitBttn">Выйти</button>
+<script> 
+    alert(localStorage.getItem('mywebmmocur'));
+    if (localStorage.getItem('mywebmmocur') == null) {
+        alert('You should be logged in to access this page');
+        window.location.href = "../Index/";
+    }
+    function onQuitBtn(e) {
+        delete localStorage.mywebmmocur;
+        window.location.href = "../Index/";
+    }
+    var quitBtn = document.getElementById('quitBttn');
+    quitBtn.addEventListener("click", onQuitBtn);
+</script>
