@@ -15,6 +15,8 @@ namespace WebMMO.GameCore.ItemCore
     public interface IItem
     {
         public string Name { get; set; }
+        public string Description { get; set; }
         public ItemRarity Rarity { get; set; }
+        public int GoldValue { get; set; }
     }
 }
