@@ -8,5 +8,7 @@ namespace WebMMO.GameCore
 {
     public class Character : User
     {
+        public int MaxHealth { get; set; }
+        public int MaxMana { get; set; }
     }
 }
